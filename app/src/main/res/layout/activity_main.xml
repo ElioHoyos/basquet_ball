@@ -27,7 +27,7 @@
                 android:layout_width="72dp"
                 android:layout_height="72dp"
                 android:padding="16dp"
-
+                android:src="@drawable/ic_restore_back"
                 />
             <ImageView
                 android:layout_width="0dp"
@@ -38,6 +38,13 @@
                 android:textColor="@color/black"
                 android:textSize="60sp"
                 tools:text="62"
+                />
+            <ImageButton
+                android:id="@+id/result_button"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:padding="16dp"
+                android:src="@drawable/ic_next_button"
                 />
 
         </LinearLayout>
