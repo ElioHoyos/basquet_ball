@@ -1,6 +1,7 @@
 package com.example.clase3;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Intent;
@@ -23,6 +24,16 @@ public class MainActivity extends AppCompatActivity {
 
         viewModel = new ViewModelProvider(this).get(MainViewModel.class);
 
+       viewModel.getLocalScore().observe(this, localScoreInteger -> {
+            binding.localStoreText.setText(String.valueOf(localScoreInteger));
+       });
+
+        viewModel.getVisitorScore().observe(this, visitorScoreInteger -> {
+            binding.visitorScoreText.setText(String.valueOf(visitorScoreInteger));
+        });
+
+        setupButtons();
+
     }
 
     //método de acciones de los botones del app
@@ -30,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
         //-1 al local
         binding.localMinusButton.setOnClickListener(v -> {
             viewModel.decreaseLocal();
+
         });
         //+1 al local
         binding.localPlusButton.setOnClickListener(v -> {
