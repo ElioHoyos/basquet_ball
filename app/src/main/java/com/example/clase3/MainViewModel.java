@@ -10,9 +10,9 @@ public class MainViewModel extends ViewModel {
     private final MutableLiveData<Integer> localScore = new MutableLiveData<>();
     private final MutableLiveData<Integer> visitorScore = new MutableLiveData<>();
 
-    //métodos
+    //método main model
     public MainViewModel(){
-
+        resetScores();
     }
 
     public LiveData<Integer> getLocalScore(){
